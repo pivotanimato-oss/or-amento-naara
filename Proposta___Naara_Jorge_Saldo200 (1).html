@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://pivotanimato-oss.github.io/or-amento-naara/ -->
+<html lang="pt"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proposta — Naara Jorge</title>
+  <link href="./Proposta — Naara Jorge_files/css2" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #faf9f7;
+      --surface: #fefdfb;
+      --border: rgba(0,0,0,0.06);
+      --border-strong: rgba(0,0,0,0.1);
+      --text-primary: #2d2620;
+      --text-secondary: #7d7570;
+      --text-tertiary: #b8b0a8;
+      --radius-card: 16px;
+      --radius-btn: 980px;
+      --shadow-card: 0 2px 20px rgba(0,0,0,0.05), 0 0 0 0.5px rgba(0,0,0,0.04);
+      --shadow-btn: 0 4px 14px rgba(0,0,0,0.12);
+      --t: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+      --accent-1: #d4a574;
+      --accent-2: #e8bfa1;
+      --accent-3: #f0cdb5;
+      --accent-4: #c9a080;
+    }
+
+    html { -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 300;
+      background: var(--bg);
+      color: var(--text-primary);
+      min-height: 100vh;
+      padding: 2.5rem 1.5rem 4rem;
+      line-height: 1.5;
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      max-width: 640px;
+      margin: 0 auto 1.8rem;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: fadeUp 0.55s cubic-bezier(0.4,0,0.2,1) 0.05s forwards;
+      text-align: center;
+    }
+    .page-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 7px;
+    }
+    .page-title {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(26px, 5vw, 36px);
+      font-weight: 400;
+      letter-spacing: -0.022em;
+      line-height: 1.15;
+    }
+    .page-title em {
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+
+    /* WRAP */
+    .wrap {
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    /* CARD */
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    .card.in { animation: fadeUp 0.52s cubic-bezier(0.4,0,0.2,1) forwards; }
+    
+    .card#card1 .card-header {
+      background: linear-gradient(135deg, var(--accent-1) 0%, var(--accent-2) 100%);
+      color: white;
+      border-bottom: none;
+    }
+    
+    .card#card1 .card-eyebrow {
+      color: rgba(255,255,255,0.85);
+    }
+    
+    .card#card1 .card-title {
+      color: white;
+    }
+
+    /* CARD HEADER */
+    .card-header {
+      padding: 18px 20px 14px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .card-eyebrow {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 3px;
+    }
+    .card-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 19px;
+      font-weight: 400;
+      letter-spacing: -0.015em;
+      line-height: 1.2;
+    }
+    .card-client {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-top: 3px;
+      font-weight: 400;
+    }
+    .card-badge {
+      flex-shrink: 0;
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      color: var(--text-secondary);
+      background: var(--bg);
+      border: 1px solid var(--border-strong);
+      border-radius: 980px;
+      padding: 5px 13px;
+      white-space: nowrap;
+      margin-top: 2px;
+    }
+
+    .card#card2 .card-header {
+      background: linear-gradient(135deg, var(--accent-4) 0%, var(--accent-1) 100%);
+      color: white;
+      border-bottom: none;
+    }
+    
+    .card#card2 .card-eyebrow {
+      color: rgba(255,255,255,0.85);
+    }
+    
+    .card#card2 .card-title {
+      color: white;
+    }
+
+    /* LINE ITEMS */
+    .card-body { padding: 0 20px; }
+
+    .line-item {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .line-item:last-child { border-bottom: none; }
+
+    .line-left {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      flex: 1;
+      min-width: 0;
+    }
+    .line-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 11px;
+      font-style: italic;
+      color: var(--accent-1);
+      min-width: 16px;
+      padding-top: 0px;
+      flex-shrink: 0;
+      font-weight: 500;
+    }
+    .line-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+      letter-spacing: -0.01em;
+    }
+    .line-desc {
+      font-size: 12px;
+      color: var(--text-secondary);
+      font-weight: 300;
+      line-height: 1.4;
+    }
+    .line-highlight {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 8px;
+      font-size: 11px;
+      font-weight: 500;
+      color: #8b7c6b;
+      background: #f4ede8;
+      border: 1px solid #e8ddd5;
+      border-radius: 8px;
+      padding: 5px 10px;
+    }
+    .line-highlight::before { content: '✦'; font-size: 8px; opacity: 0.55; }
+    .line-price {
+      font-family: 'DM Serif Display', serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--accent-1);
+      white-space: nowrap;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    /* TOTAL ROW */
+    .total-row {
+      padding: 14px 20px;
+      background: linear-gradient(135deg, rgba(212,165,116,0.08) 0%, rgba(232,191,161,0.08) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border-top: 1px solid var(--border);
+    }
+    .total-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+    .total-sublabel {
+      font-size: 10.5px;
+      color: var(--text-tertiary);
+      font-weight: 300;
+      margin-top: 2px;
+    }
+    .total-val {
+      font-family: 'DM Serif Display', serif;
+      font-size: 28px;
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      transition: var(--t);
+      color: var(--accent-1);
+    }
+
+    /* PAYMENT SUMMARY */
+    .payment-summary {
+      padding: 14px 20px 16px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .payment-summary-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+    .payment-summary-label {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      letter-spacing: 0.01em;
+    }
+    .payment-summary-label.strong {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    .payment-summary-val {
+      font-family: 'DM Serif Display', serif;
+      font-size: 16px;
+      letter-spacing: -0.02em;
+    }
+    .payment-summary-val.muted {
+      text-decoration: line-through;
+      color: var(--text-tertiary);
+      font-size: 14px;
+    }
+    .payment-summary-val.green {
+      color: #7fb069;
+    }
+    .payment-summary-val.accent {
+      font-size: 26px;
+      color: var(--accent-1);
+    }
+    .payment-summary-divider {
+      height: 1px;
+      background: var(--border-strong);
+      margin: 4px 0 5px;
+    }
+
+    /* PAY FOOTER */
+    .pay-footer {
+      padding: 12px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .pay-secure {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0px;
+      font-size: 11px;
+      color: var(--text-secondary);
+      text-align: center;
+    }
+    .pay-secure strong {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--accent-1);
+      font-family: 'DM Serif Display', serif;
+      line-height: 1;
+      margin: 1px 0;
+    }
+    .pay-secure svg { opacity: 0.45; }
+
+    .btn-invest {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-1);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: var(--radius-btn);
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(255,107,53,0.25);
+      transition: var(--t);
+      white-space: nowrap;
+    }
+    .btn-invest:hover {
+      background: #ff5015;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(255,107,53,0.35);
+    }
+    .btn-invest:active { transform: translateY(0); }
+    .btn-invest svg { opacity: 0.7; flex-shrink: 0; }
+
+    /* STRATEGY */
+    .strategy-card {
+      background: linear-gradient(135deg, var(--accent-2) 0%, var(--accent-3) 100%);
+      border-radius: var(--radius-card);
+      padding: 14px 20px;
+      opacity: 0;
+      transform: translateY(18px);
+      text-align: center;
+      color: white;
+    }
+    .strategy-card.in { animation: fadeUp 0.52s cubic-bezier(0.4,0,0.2,1) forwards; }
+    .strategy-eyebrow {
+      font-size: 9.5px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 10px;
+    }
+    .strategy-flow {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 5px;
+      justify-content: center;
+    }
+    .strategy-pill {
+      font-size: 10px;
+      font-weight: 400;
+      padding: 5px 11px;
+      border-radius: 980px;
+      border: 1px solid rgba(255,255,255,0.4);
+      color: white;
+      background: rgba(255,255,255,0.15);
+      white-space: nowrap;
+    }
+    .strategy-arrow { font-size: 10px; color: rgba(255,255,255,0.6); }
+    .strategy-sub {
+      font-size: 10px;
+      color: rgba(255,255,255,0.75);
+      margin-top: 8px;
+      font-weight: 300;
+    }
+
+    /* SECTION LABEL */
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin: 10px 0 2px;
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    .section-label.in { animation: fadeUp 0.48s cubic-bezier(0.4,0,0.2,1) forwards; }
+    .section-label-line { flex: 1; height: 1px; background: var(--border-strong); }
+    .section-label-text {
+      font-size: 9.5px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+    }
+
+    /* VIDEO SELECTOR */
+    .vid-selector-block {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .vid-selector-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .vid-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+    .vid-btn {
+      padding: 11px 12px 10px;
+      border: 1px solid var(--border-strong);
+      border-radius: 12px;
+      background: var(--bg);
+      cursor: pointer;
+      text-align: left;
+      font-family: 'DM Sans', sans-serif;
+      transition: var(--t);
+    }
+    .vid-btn:hover { border-color: var(--accent-2); background: rgba(247,147,30,0.08); }
+    .vid-btn.active {
+      border-color: var(--accent-1);
+      background: var(--accent-1);
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(255,107,53,0.25);
+    }
+    .vid-btn-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 3px;
+    }
+    .vid-btn-count { font-size: 12px; font-weight: 500; letter-spacing: -0.01em; }
+    .vid-btn-price { font-family: 'DM Serif Display', serif; font-size: 14px; letter-spacing: -0.01em; }
+    .vid-btn-sub {
+      font-size: 10px;
+      font-weight: 300;
+      color: var(--text-tertiary);
+      line-height: 1.3;
+    }
+    .vid-btn.active .vid-btn-sub { color: rgba(255,255,255,0.5); }
+    .vid-ideal {
+      font-size: 8.5px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-left: 3px;
+    }
+    .vid-btn.active .vid-ideal { color: rgba(255,255,255,0.5); }
+    .vid-btn:not(.active) .vid-ideal { color: var(--text-tertiary); }
+
+    .vid-caption {
+      margin-top: 8px;
+      font-size: 11px;
+      color: var(--text-tertiary);
+      font-weight: 300;
+    }
+
+    /* NOTE */
+    .card-note {
+      padding: 10px 20px 14px;
+      font-size: 11px;
+      color: var(--text-tertiary);
+      font-weight: 300;
+      line-height: 1.7;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ANIMATION */
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 580px) {
+      body { padding: 2.5rem 1rem 5rem; }
+      .card-header { padding: 20px 18px 16px; flex-direction: column; }
+      .card-badge { margin-top: 6px; }
+      .card-body { padding: 0 18px; }
+      .total-row { padding: 17px 18px; }
+      .pay-footer { padding: 14px 18px; }
+      .card-note { padding: 11px 18px 16px; }
+      .total-val { font-size: 26px; }
+      .vid-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="page-header">
+    <div class="page-eyebrow">Pagamento de saldo restante</div>
+    <h1 class="page-title">Para <em>Naara Jorge</em></h1>
+  </header>
+
+  <div class="wrap">
+
+    <!-- STRATEGY -->
+    <div class="strategy-card in" id="strat">
+      <div class="strategy-eyebrow">Estratégia de conteúdo — ciclo Corte Retorno</div>
+      <div class="strategy-flow">
+        <span class="strategy-pill">Corte Retorno</span>
+        <span class="strategy-arrow">→</span>
+        <span class="strategy-pill">Vídeo de fala</span>
+        <span class="strategy-arrow">→</span>
+        <span class="strategy-pill">Corte Café</span>
+        <span class="strategy-arrow">→</span>
+        <span class="strategy-pill">Vídeo de fala</span>
+        <span class="strategy-arrow">→</span>
+        <span class="strategy-pill">Depoimento</span>
+      </div>
+      <div class="strategy-sub">3 meses de conteúdo — estruturado em ciclo contínuo</div>
+    </div>
+
+    <div class="card in" id="card1">
+      <div class="card-header">
+        <div>
+          <div class="card-eyebrow">Produção de vídeo</div>
+          <div class="card-title">Retorno à Essência</div>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="line-item">
+          <div class="line-left">
+            <span class="line-num">01</span>
+            <div>
+              <div class="line-name">Cobertura do Evento</div>
+              <div class="line-desc">Captação completa — até 10h de cobertura</div>
+              <div class="line-highlight">Same day: highlights + rushes brutos</div>
+            </div>
+          </div>
+          <div class="line-price">€250</div>
+        </div>
+
+        <div class="line-item">
+          <div class="line-left">
+            <span class="line-num">02</span>
+            <div>
+              <div class="line-name">Vídeos para Redes Sociais</div>
+              <div class="line-desc">12 vídeos curtos editados para redes</div>
+            </div>
+          </div>
+          <div class="line-price">€75</div>
+        </div>
+
+        <div class="line-item">
+          <div class="line-left">
+            <span class="line-num">03</span>
+            <div>
+              <div class="line-name">Custos Operacionais</div>
+              <div class="line-desc">Deslocamento, alimentação e logística</div>
+            </div>
+          </div>
+          <div class="line-price">€75</div>
+        </div>
+      </div>
+
+      <div class="payment-summary">
+        <div class="payment-summary-row">
+          <span class="payment-summary-label">Pacote total</span>
+          <span class="payment-summary-val muted">€400</span>
+        </div>
+        <div class="payment-summary-row">
+          <span class="payment-summary-label">Já investido</span>
+          <span class="payment-summary-val green">−€200</span>
+        </div>
+        <div class="payment-summary-divider"></div>
+        <div class="payment-summary-row">
+          <span class="payment-summary-label strong">Saldo restante</span>
+          <span class="payment-summary-val accent">€200</span>
+        </div>
+      </div>
+
+      <div class="pay-footer">
+        <div class="pay-secure">
+          <span>Parcelamento Klarna</span>
+          <strong>€66,67/mês</strong>
+          <span style="font-size: 9.5px; color: var(--text-tertiary);">3 parcelas</span>
+        </div>
+        <a class="btn-invest" href="https://buy.stripe.com/4gM8wR6JLaJwbGO5fk4Ja0F" target="_blank" rel="noopener">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2.5"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+          Investir €200 Restantes
+        </a>
+      </div>
+    </div>
+
+    <div class="card in" id="card2">
+      <div class="card-header">
+        <div>
+          <div class="card-eyebrow">Produção de vídeo</div>
+          <div class="card-title">Evento Café</div>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="line-item">
+          <div class="line-left">
+            <span class="line-num">01</span>
+            <div>
+              <div class="line-name">Cobertura do Evento (Café)</div>
+              <div class="line-desc">Captação de até 6h + gravação de testemunhos</div>
+            </div>
+          </div>
+          <div class="line-price">€150</div>
+        </div>
+
+        <div class="line-item">
+          <div class="line-left">
+            <span class="line-num">02</span>
+            <div>
+              <div class="line-name">Custos Operacionais</div>
+              <div class="line-desc">Deslocamento, alimentação e logística</div>
+            </div>
+          </div>
+          <div class="line-price">€60</div>
+        </div>
+
+        <div class="vid-selector-block">
+          <div class="vid-selector-top">
+            <div class="line-left">
+              <span class="line-num">03</span>
+              <div>
+                <div class="line-name">Vídeos para Redes Sociais</div>
+                <div class="line-desc">Selecione a quantidade de cortes editados</div>
+              </div>
+            </div>
+            <div class="line-price" id="vid-price">€75</div>
+          </div>
+
+          <div class="vid-grid">
+            <button class="vid-btn" onclick="selectVids(6,40,this)">
+              <div class="vid-btn-top">
+                <span class="vid-btn-count">6 vídeos</span>
+                <span class="vid-btn-price">€40</span>
+              </div>
+              <div class="vid-btn-sub">até 1,5 meses de conteúdo</div>
+            </button>
+
+            <button class="vid-btn" onclick="selectVids(8,50,this)">
+              <div class="vid-btn-top">
+                <span class="vid-btn-count">8 vídeos</span>
+                <span class="vid-btn-price">€50</span>
+              </div>
+              <div class="vid-btn-sub">até 2 meses de conteúdo</div>
+            </button>
+
+            <button class="vid-btn" onclick="selectVids(10,65,this)">
+              <div class="vid-btn-top">
+                <span class="vid-btn-count">10 vídeos</span>
+                <span class="vid-btn-price">€65</span>
+              </div>
+              <div class="vid-btn-sub">até 2,5 meses de conteúdo</div>
+            </button>
+
+            <button class="vid-btn active" onclick="selectVids(12,75,this)">
+              <div class="vid-btn-top">
+                <span class="vid-btn-count">12 vídeos</span>
+                <span class="vid-btn-price">€75</span>
+              </div>
+              <div class="vid-btn-sub">até 3 meses<span class="vid-ideal"> — ideal</span></div>
+            </button>
+          </div>
+
+          <div class="vid-caption" id="vid-info">12 vídeos selecionados — até 3 meses de conteúdo</div>
+        </div>
+      </div>
+
+      <div class="total-row">
+        <div>
+          <div class="total-label">Total</div>
+          <div class="total-sublabel">Cobertura + Custos + Vídeos</div>
+        </div>
+        <div class="total-val" id="grand-total">€285</div>
+      </div>
+
+      <div class="pay-footer">
+        <div class="pay-secure">
+          <span>Parcelamento Klarna</span>
+          <strong id="klarna-value">€95/mês</strong>
+          <span style="font-size: 9.5px; color: var(--text-tertiary);">3 parcelas</span>
+        </div>
+        <button class="btn-invest" onclick="goToPay()">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2.5"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+          <span id="pay-btn-label">Investir €285</span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Staggered entrance
+    [
+      ['strat', 100],
+      ['card1', 180],
+      ['card2', 280],
+    ].forEach(function(pair) {
+      setTimeout(function() {
+        var el = document.getElementById(pair[0]);
+        if (el) el.classList.add('in');
+      }, pair[1]);
+    });
+
+    // Video selector
+    var BASE = 210;
+    var currentVids = 12;
+    var labels = { 6:'até 1,5 meses de conteúdo', 8:'até 2 meses de conteúdo', 10:'até 2,5 meses de conteúdo', 12:'até 3 meses de conteúdo' };
+    var links  = {
+      6:  'https://buy.stripe.com/3cIfZjfghdVI3aigY24Ja0e',
+      8:  'https://buy.stripe.com/3cI5kFgklcRE3aiePU4Ja0f',
+      10: 'https://buy.stripe.com/4gMaEZb0104S6mufTY4Ja0g',
+      12: 'https://buy.stripe.com/bJe14p9VX8BoaCKePU4Ja0h',
+    };
+
+    function goToPay() {
+      var l = links[currentVids];
+      if (l) window.open(l, '_blank', 'noopener');
+    }
+
+    function selectVids(count, price, btn) {
+      currentVids = count;
+      document.querySelectorAll('.vid-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.getElementById('vid-price').textContent = '€' + price;
+      document.getElementById('vid-info').textContent = count + ' vídeos selecionados — ' + labels[count];
+      var total = BASE + price;
+      document.getElementById('grand-total').textContent = '€' + total;
+      document.getElementById('pay-btn-label').textContent = 'Investir €' + total;
+      var klarnaValue = (total / 3).toFixed(2);
+      document.getElementById('klarna-value').textContent = '€' + klarnaValue + '/mês';
+    }
+  </script>
+
+
+<div class="glasp-extension-toaster" style="display: block; width: 320px; margin: unset; padding: unset; border: unset; border-radius: unset; outline: unset; background-color: unset; box-shadow: unset; position: fixed; top: 40px; right: 24px; z-index: 9999;"><template shadowrootmode="open"><div class="glasp-extension" style="font-family: inherit;"></div></template></div><veepn-lock-screen><template shadowrootmode="open"><style>html{box-sizing:border-box;-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;text-size-adjust:100%;word-break:normal;tab-size:4}*,:before,:after{box-sizing:border-box;background-repeat:no-repeat}:before,:after{-webkit-text-decoration:inherit;text-decoration:inherit;vertical-align:inherit}*{margin:0;padding:0}hr{height:0;color:inherit;border:0;border-top:1px solid;overflow:visible}details,main{display:block}summary{display:list-item}small{font-size:80%}[hidden]{display:none!important}abbr[title]{border-bottom:none;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}a{background-color:#0000}a:active,a:hover{outline-width:0}code,kbd,pre,samp{font-family:monospace}pre{font-size:1em}b,strong{font-weight:bolder}sub,sup{vertical-align:baseline;font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}table{border-color:inherit;text-indent:0}iframe{border-style:none}input{border-radius:0}[type=number]::-webkit-inner-spin-button{height:auto}[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{appearance:none}textarea{resize:vertical;overflow:auto}button,input,optgroup,select,textarea{font:inherit;color:inherit}optgroup{font-weight:700}button{overflow:visible}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit],[role=button]{cursor:pointer}button::-moz-focus-inner{border-style:none;padding:0}[type=button]::-moz-focus-inner{border-style:none;padding:0}[type=reset]::-moz-focus-inner{border-style:none;padding:0}[type=submit]::-moz-focus-inner{border-style:none;padding:0}button,html [type=button],[type=reset],[type=submit]{appearance:auto}button,input,select,textarea{background-color:#0000;border-style:none}button:-moz-focusring{outline:1px dotted buttontext}[type=button]::-moz-focus-inner{outline:1px dotted buttontext}[type=reset]::-moz-focus-inner{outline:1px dotted buttontext}[type=submit]::-moz-focus-inner{outline:1px dotted buttontext}select{appearance:none}a:focus,button:focus,input:focus,select:focus,textarea:focus{outline-width:0}select::-ms-expand{display:none}select::-ms-value{color:currentColor}legend{color:inherit;white-space:normal;border:0;max-width:100%;display:table}::-webkit-file-upload-button{appearance:auto;color:inherit;font:inherit}[disabled]{cursor:default}img{border-style:none}progress{vertical-align:baseline}[aria-busy=true]{cursor:progress}[aria-controls]{cursor:pointer}[aria-disabled=true]{cursor:default}ul,ol{list-style-type:none}figure{margin:0}@keyframes slide-in{0%{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0%)}}.gradient-blue{background:radial-gradient(106.41% 128.47% at 50.15% 128.47%,#23abff 0%,#3066ff 100%)}.gradient-green{background:radial-gradient(92.26% 118.88% at 50.15% .13%,#00c3c3 0%,#00aab3 100%)}.gradient-purple{background:radial-gradient(165.12% 115.56% at 50.15% .13%,#a15aff 0%,#00a0eb 100%)}.bg-blue{background-color:#f2f5ff}.bg-purple{background-color:#f7f0ff}.bg-green{background-color:#ebffed}.lock-screen{letter-spacing:normal;z-index:2147483638;border-radius:24px;width:327px;font-family:FigtreeVF,sans-serif;animation:.3s ease-in-out forwards slide-in;position:fixed;bottom:24px;right:24px;overflow:hidden;box-shadow:0 24px 32px #00000014}.lock-screen__content{padding:24px 24px 64px;position:relative}.lock-screen__close{opacity:.5;justify-content:center;align-items:center;width:24px;height:24px;display:flex;position:absolute;top:16px;right:16px}.lock-screen__label{color:#fff;background-color:#fff3;border-radius:50px;justify-content:center;align-items:center;gap:8px;width:fit-content;height:26px;margin:-8px auto 16px;padding-inline:16px;font-size:12px;line-height:18px;display:flex}.lock-screen__title{color:#fff;text-align:center;margin-bottom:8px;font-size:20px;font-weight:600;line-height:28px}.lock-screen__description{color:#f5f6f7;text-align:center;font-size:14px;line-height:20px}.lock-screen__description b{font-weight:600}.lock-screen__card{z-index:1;background-color:#fff;border-radius:24px;margin-top:-44px;padding:32px 20px 20px;position:relative}.lock-screen__inner{margin-bottom:24px}.lock-screen__submit{color:#fff;background-color:#f70;border-radius:12px;justify-content:center;align-items:center;gap:10px;width:100%;height:40px;margin-bottom:16px;padding-inline:16px;font-size:16px;font-weight:700;display:flex}.lock-screen__skip{color:#82829c;justify-content:center;align-items:center;margin-inline:auto;font-size:14px;line-height:20px;display:flex}.price-card{background:linear-gradient(254.14deg,#fafbff .04%,#f5f8ff 100.04%);border:1px solid #f2f2fc;border-radius:24px;padding:24px 28px}.price-card__label{color:#4a5764;text-align:center;text-transform:uppercase;margin-bottom:16px;font-size:14px;line-height:20px}.price-card__price{justify-content:center;align-items:flex-start;column-gap:2px;margin-bottom:12px;display:flex}.price-card__currency{color:#515478;font-size:18px;line-height:28px}.price-card__number{color:#14142a;text-align:center;font-size:64px;line-height:54px}.price-card__wrap{flex-direction:column;display:flex}.price-card__decimal{color:#515478;font-size:18px;font-weight:600;line-height:28px}.price-card__period{color:#515478;margin-top:-6px;font-size:14px;line-height:20px}.price-card__discount{justify-content:center;align-items:center;margin-bottom:12px;display:flex;position:relative}.price-card__discount-divider{z-index:0;background-color:#dbe2f9;width:100%;height:1px;position:absolute;top:50%;left:0;transform:translateY(-50%)}.price-card__discount-icon{z-index:1;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}.price-card__discount-text{z-index:2;color:#fff;font-size:12px;font-weight:600;line-height:18px;position:relative}.price-card__features{justify-content:center;align-items:center;column-gap:16px;display:flex}.price-card__feature{color:#222e3a;align-items:center;gap:6px;font-size:14px;line-height:20px;display:flex}.price-card__feature:before{content:"";background-color:#20df9e;border-radius:50%;flex-shrink:0;width:4px;height:4px;display:block}.features-list{grid-template-columns:repeat(3,1fr);gap:12px;display:grid}.features-list__item{flex-direction:column;align-items:center;gap:6px;display:flex}.features-list__icon{border-radius:12px;justify-content:center;align-items:center;width:52px;height:52px;display:flex}.features-list__text{color:#293a53;text-align:center;letter-spacing:-.1px;font-size:16px;line-height:24px}</style></template><style>@font-face{font-family:FigtreeVF;src:url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2)format("woff2 supports variations"),url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2)format("woff2-variations");font-weight:100 1000;font-display:swap}</style></veepn-lock-screen></body><div class="glasp-extension" style="display: block; width: unset; margin: unset; padding: unset; border: unset; border-radius: unset; outline: unset; background-color: unset; box-shadow: unset; position: fixed; bottom: 16px; right: 16px; z-index: 9999;"><div class="glasp-extension" style="font-family: inherit;"></div></div></html>
